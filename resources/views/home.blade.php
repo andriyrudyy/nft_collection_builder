@@ -1,0 +1,31 @@
+@extends('layouts.app')
+
+@section('title', 'Home')
+
+@section('content')
+    <img class="logo" src="{{url('/images/logo.jpg')}}" alt="Logo" width="360">
+
+    <form action="/" method="POST">
+        @csrf
+        <div class="wallet-check">
+            <input
+                value="{{ $wallet ?? '' }}"
+                autocomplete="off"
+                type="text"
+                name="wallet"
+                placeholder="Wallet hash"
+                aria-label="Wallet Hash"
+                required
+            >
+            <button type="submit">Check</button>
+        </div>
+    </form>
+
+    @isset($result)
+        <p class="search-result">{{ $result  }}</p>
+    @endisset
+@endsection
+
+@section('styles')
+    @vite('resources/css/home.css')
+@endsection

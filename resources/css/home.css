@@ -1,0 +1,42 @@
+.logo {
+    margin-bottom: 3rem;
+}
+
+.wallet-check {
+    border-bottom: 1px solid #a574ef;
+    display: flex;
+    padding: 0.5rem 0;
+    max-width: 360px;
+    width: 100%;
+}
+
+.wallet-check input {
+    border:none;
+    background-image:none;
+    background-color:transparent;
+    box-shadow: none;
+    outline: none;
+    width: 100%;
+}
+
+.wallet-check button {
+    background-color: #a574ef;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.wallet-check button:hover {
+    background-color: #6723dc;
+}
+
+.search-result {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 380px) {
+    form {
+        padding: 0 1rem;
+    }
+}
