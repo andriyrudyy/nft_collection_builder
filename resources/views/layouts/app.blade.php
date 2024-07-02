@@ -25,6 +25,8 @@
             <a href="https://discord.com/" target="_blank"><img src="{{url('/images/discord.svg')}}" alt="Discord Logo"></a>
         </footer>
 
+        <canvas id="canvas"></canvas>
+
         @vite('resources/js/app.js')
         @yield('scripts')
     </body>
