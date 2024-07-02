@@ -7,4 +7,6 @@ const starback = new Starback('#canvas', {
     direction: 225,
     backgroundColor: ['#020003', '#16021f'],
     randomOpacity: true,
+    width: document.body.clientWidth,
+    height: document.body.clientHeight,
 })

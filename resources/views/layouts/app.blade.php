@@ -13,10 +13,10 @@
         @vite('resources/css/app.css')
         @yield('styles')
     </head>
-    <body class="container mx-auto">
+    <body>
         <header></header>
 
-        <main>
+        <main class="container mx-auto">
             @yield('content')
         </main>
 
