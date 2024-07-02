@@ -1,16 +1,24 @@
 .logo {
-    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 8rem;
+    margin-bottom: 4rem;
 }
 
 .wallet-check {
+    display: flex;
+    justify-content: center;
+}
+
+.wallet-check__input-group {
     border-bottom: 1px solid #a574ef;
     display: flex;
     padding: 0.5rem 0;
-    max-width: 360px;
+    max-width: 540px;
     width: 100%;
 }
 
-.wallet-check input {
+.wallet-check__input-group input {
     border:none;
     background-image:none;
     background-color:transparent;
@@ -19,13 +27,13 @@
     width: 100%;
 }
 
-.wallet-check button {
+.wallet-check__input-group button {
     background-color: #a574ef;
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
 }
 
-.wallet-check button:hover {
+.wallet-check__input-group button:hover {
     background-color: #6723dc;
 }
 
@@ -35,8 +43,13 @@
     text-align: center;
 }
 
-@media screen and (max-width: 380px) {
-    form {
+@media screen and (max-width: 560px) {
+    .logo {
+        margin-top: 6rem;
+        margin-bottom: 3rem;
+    }
+
+    .wallet-check {
         padding: 0 1rem;
     }
 }

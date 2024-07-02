@@ -3,11 +3,13 @@
 @section('title', 'Home')
 
 @section('content')
-    <img class="logo" src="{{url('/images/logo.jpg')}}" alt="Logo" width="360">
+    <div class="logo">
+        <img src="{{url('/images/logo.jpg')}}" alt="Logo" width="360">
+    </div>
 
-    <form action="/" method="POST">
+    <form class="wallet-check" action="/" method="POST">
         @csrf
-        <div class="wallet-check">
+        <div class="wallet-check__input-group">
             <input
                 value="{{ $wallet ?? '' }}"
                 autocomplete="off"
@@ -22,7 +24,7 @@
     </form>
 
     @isset($result)
-        <p class="search-result">{{ $result  }}</p>
+        <p class="search-result">{{ $result }}</p>
     @endisset
 @endsection
 

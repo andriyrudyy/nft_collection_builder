@@ -10,14 +10,10 @@ body {
     min-height: 100vh;
 }
 
-main {
-    margin: 0 auto;
-}
-
 footer {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 2rem;
     margin-top: auto;
-    padding: 20px 0;
+    padding: 2rem 0;
 }
