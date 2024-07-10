@@ -1,6 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    line-height: 1.5;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+html {
+    font-size: 16px;
+    color: #f2fff6;
+}
 
 body {
     background-color: #020003;
@@ -8,6 +17,12 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    margin: 0;
+}
+
+main {
+    margin: 0 auto;
+    width: 100%;
 }
 
 footer {
@@ -18,10 +33,182 @@ footer {
     padding: 2rem 0;
 }
 
+input::placeholder {
+    color: #9ca3af;
+    font-size: 16px;
+    opacity: 1;
+}
+
 #canvas {
     position: fixed;
     inset: 0;
     z-index: -1;
     width: 100%;
     height: 100%;
+}
+
+@media screen and (min-width: 577px) {
+    #menuToggle input {
+        display: none;
+    }
+
+    #menu {
+        display: flex;
+        justify-content: flex-end;
+        gap: 2rem;
+        padding: 2rem;
+        font-size: 1.25rem;
+        list-style-type: none;
+        margin: 0;
+    }
+
+    #menu a {
+        text-decoration: none;
+        color: #f2fff6;
+    }
+
+    #menu li.active {
+        border-bottom: 2px solid #a574ef;
+    }
+}
+
+
+@media screen and (max-width: 576px) {
+    /*
+     * Burger menu
+     * https://codepen.io/erikterwan/pen/EVzeRP
+     */
+    #menuToggle {
+        display: block;
+        position: fixed;
+        top: 50px;
+        left: 50px;
+
+        z-index: 1;
+
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    #menuToggle a {
+        text-decoration: none;
+        color: #020003;
+
+        transition: color 0.3s ease;
+    }
+
+    #menuToggle a:hover {
+        color: #a574ef;
+    }
+
+
+    #menuToggle input {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: -7px;
+        left: -5px;
+
+        cursor: pointer;
+
+        opacity: 0; /* hide this */
+        z-index: 2; /* and place it over the hamburger */
+
+        -webkit-touch-callout: none;
+    }
+
+    /*
+     * Just a quick hamburger
+     */
+    #menuToggle span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+
+        background: #f2fff6;
+        border-radius: 3px;
+
+        z-index: 1;
+
+        transform-origin: 4px 0px;
+
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        opacity 0.55s ease;
+    }
+
+    #menuToggle span:first-child {
+        transform-origin: 0% 0%;
+    }
+
+    #menuToggle span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+    }
+
+    /*
+     * Transform all the slices of hamburger
+     * into a crossmark.
+     */
+    #menuToggle input:checked ~ span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: #020003;
+    }
+
+    /*
+     * But let's hide the middle one.
+     */
+    #menuToggle input:checked ~ span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    /*
+     * Ohyeah and the last one should go the other direction
+     */
+    #menuToggle input:checked ~ span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(0, -1px);
+    }
+
+    /*
+     * Make this absolute positioned
+     * at the top left of the screen
+     */
+    #menu {
+        position: absolute;
+        width: 260px;
+        height: 100vh;
+        margin: -77px 0 0 -50px;
+        padding: 50px;
+        padding-top: 100px;
+
+        background: #f2fff6;
+        list-style-type: none;
+        -webkit-font-smoothing: antialiased;
+        /* to stop flickering of text in safari */
+
+        transform-origin: 0% 0%;
+        transform: translate(-100%, 0);
+
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    }
+
+    #menu li {
+        padding: 15px 0 5px 0;
+        font-size: 22px;
+    }
+
+    #menu li.active {
+        border-bottom: 2px solid #a574ef;
+    }
+
+    /*
+     * And let's slide it in from the left
+     */
+    #menuToggle input:checked ~ ul {
+        transform: none;
+    }
 }

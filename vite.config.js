@@ -7,7 +7,9 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/css/home.css',
+                'resources/css/pfp-builder.css',
                 'resources/js/app.js',
+                'resources/js/pfp-builder.js',
             ],
             refresh: true,
         }),

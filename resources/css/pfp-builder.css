@@ -1,0 +1,17 @@
+.pfp-builder {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 6rem;
+}
+
+.builder-options label {
+    display: inline-block;
+    min-width: 100px;
+}
+
+@media screen and (max-width: 576px) {
+    .pfp-builder {
+        flex-direction: column;
+    }
+}

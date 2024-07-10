@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Home')
+@section('title', 'NFT collection white list checker')
 
 @section('content')
     <div class="logo">

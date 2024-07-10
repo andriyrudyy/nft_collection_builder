@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Pizza Rhinos - @yield('title')</title>
+        <title>Pizza Rhinos @yield('title')</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -14,15 +14,48 @@
         @yield('styles')
     </head>
     <body>
-        <header></header>
+        <header>
+            <nav role="navigation">
+                <div id="menuToggle">
+                    <!--
+                    A fake / hidden checkbox is used as click reciever,
+                    so you can use the :checked selector on it.
+                    -->
+                    <input type="checkbox" />
 
-        <main class="container mx-auto">
+                    <!--
+                    Some spans to act as a hamburger.
+
+                    They are acting like a real hamburger,
+                    not that McDonalds stuff.
+                    -->
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                    <!--
+                    Too bad the menu has to be inside of the button
+                    but hey, it's pure CSS magic.
+                    -->
+                    <ul id="menu">
+                        <li class="{{ request()->is('/') ? 'active' : '' }}">
+                            <a href="/">WL checker</a>
+                        </li>
+                        <li class="{{ request()->is('pfp-builder') ? 'active' : '' }}">
+                            <a href="/pfp-builder">PFP Builder</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main>
             @yield('content')
         </main>
 
         <footer>
-            <a href="https://x.com/" target="_blank"><img src="{{url('/images/twitter.svg')}}" alt="X Logo"></a>
-            <a href="https://discord.com/" target="_blank"><img src="{{url('/images/discord.svg')}}" alt="Discord Logo"></a>
+            <a href="https://x.com/pizza_rhinos" target="_blank"><img src="{{url('/images/twitter.svg')}}" alt="X Logo"></a>
+            <a href="https://discord.gg/pizza_rhinos" target="_blank"><img src="{{url('/images/discord.svg')}}" alt="Discord Logo"></a>
         </footer>
 
         <canvas id="canvas"></canvas>

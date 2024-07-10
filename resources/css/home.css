@@ -1,7 +1,7 @@
 .logo {
     display: flex;
     justify-content: center;
-    margin-top: 8rem;
+    margin-top: 6rem;
     margin-bottom: 4rem;
 }
 
@@ -23,14 +23,21 @@
     background-image:none;
     background-color:transparent;
     box-shadow: none;
+    color: #f2fff6;
+    font-size: 16px;
     outline: none;
+    padding: 0;
     width: 100%;
 }
 
 .wallet-check__input-group button {
     background-color: #a574ef;
-    padding: 0.25rem 0.5rem;
+    border: none;
     border-radius: 0.25rem;
+    color: #f2fff6;
+    font-size: 16px;
+    outline: none;
+    padding: 0.25rem 0.5rem;
 }
 
 .wallet-check__input-group button:hover {
@@ -43,7 +50,7 @@
     text-align: center;
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 576px) {
     .logo {
         margin-top: 6rem;
         margin-bottom: 3rem;
