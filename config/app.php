@@ -123,4 +123,6 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'wl_checker_enabled' => env('WL_CHECKER_ENABLED', true),
+
 ];

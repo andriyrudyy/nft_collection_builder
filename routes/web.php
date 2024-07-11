@@ -5,5 +5,8 @@ use App\Http\Controllers\PFPBuilderController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PFPBuilderController::class, 'index']);
-Route::get('/wl-checker', [WLCheckerController::class, 'index']);
-Route::post('/wl-checker', [WLCheckerController::class, 'search']);
+
+if (config('app.wl_checker_enabled')) {
+    Route::get('/wl-checker', [WLCheckerController::class, 'index']);
+    Route::post('/wl-checker', [WLCheckerController::class, 'search']);
+}

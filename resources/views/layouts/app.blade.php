@@ -15,6 +15,7 @@
     </head>
     <body>
         <header>
+            @if(config('app.wl_checker_enabled'))
             <nav role="navigation">
                 <div id="menuToggle">
                     <!--
@@ -47,6 +48,7 @@
                     </ul>
                 </div>
             </nav>
+            @endif
         </header>
 
         <main>
