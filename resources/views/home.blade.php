@@ -15,8 +15,8 @@
                 autocomplete="off"
                 type="text"
                 name="wallet"
-                placeholder="Wallet hash"
-                aria-label="Wallet Hash"
+                placeholder="Wallet address"
+                aria-label="Wallet address"
                 required
             >
             <button type="submit">Check</button>

@@ -26,11 +26,19 @@ main {
 }
 
 footer {
+    margin-top: auto;
+    padding: 2rem 0;
+}
+
+footer .copyright {
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+footer .icons {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin-top: auto;
-    padding: 2rem 0;
 }
 
 input::placeholder {

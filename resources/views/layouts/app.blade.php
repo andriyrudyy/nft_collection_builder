@@ -54,8 +54,11 @@
         </main>
 
         <footer>
-            <a href="https://x.com/pizza_rhinos" target="_blank"><img src="{{url('/images/twitter.svg')}}" alt="X Logo"></a>
-            <a href="https://discord.gg/pizza_rhinos" target="_blank"><img src="{{url('/images/discord.svg')}}" alt="Discord Logo"></a>
+            <div class="icons">
+                <a href="https://x.com/pizza_rhinos" target="_blank"><img src="{{url('/images/twitter.svg')}}" alt="X Logo"></a>
+                <a href="https://discord.gg/pizza_rhinos" target="_blank"><img src="{{url('/images/discord.svg')}}" alt="Discord Logo"></a>
+            </div>
+            <div class="copyright">(с) Pizza Rhinos 2024</div>
         </footer>
 
         <canvas id="canvas"></canvas>
