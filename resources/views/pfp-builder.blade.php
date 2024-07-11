@@ -6,16 +6,17 @@
     <div class="pfp-builder">
         <canvas id="pfp-builder" width="500" height="500"></canvas>
         <div class="builder-options">
-        @foreach ($dropdowns as $dropdown)
-            <div>
-                <label>{{ucfirst($dropdown->name)}}</label>
-                <select name="{{$dropdown->name}}">
-                    @foreach ($dropdown->items as $key => $item)
-                        <option {{ $key === $dropdown->selected ? 'selected' : '' }} value="{{$item}}">{{$item}}</option>
-                    @endforeach
-                </select>
-            </div>
-        @endforeach
+            @foreach ($dropdowns as $dropdown)
+                <div class="builder-option">
+                    <label>{{ucfirst($dropdown->name)}}</label>
+                    <select name="{{$dropdown->name}}">
+                        @foreach ($dropdown->items as $key => $item)
+                            <option {{ $key === $dropdown->selected ? 'selected' : '' }} value="{{$item}}">{{$item}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            @endforeach
+            <button type="button" class="pfp-download">Export as PNG</button>
         </div>
     </div>
 @endsection

@@ -7,6 +7,15 @@
         selects[i].addEventListener('change', buildImage);
     }
 
+    document.querySelector('.pfp-download').addEventListener('click', function () {
+        // Download canvas image as PNG file
+        var image = canvas.toDataURL();
+        var aDownloadLink = document.createElement('a');
+        aDownloadLink.download = 'pizza-rhino-custom-nft.png';
+        aDownloadLink.href = image;
+        aDownloadLink.click();
+    });
+
     buildImage();
 
     function drawImageScaled(image) {
