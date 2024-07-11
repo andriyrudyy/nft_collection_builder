@@ -39,10 +39,10 @@
                     -->
                     <ul id="menu">
                         <li class="{{ request()->is('/') ? 'active' : '' }}">
-                            <a href="/">WL checker</a>
+                            <a href="/">PFP Builder</a>
                         </li>
-                        <li class="{{ request()->is('pfp-builder') ? 'active' : '' }}">
-                            <a href="/pfp-builder">PFP Builder</a>
+                        <li class="{{ request()->is('wl-checker') ? 'active' : '' }}">
+                            <a href="/wl-checker">WL checker</a>
                         </li>
                     </ul>
                 </div>
@@ -56,9 +56,9 @@
         <footer>
             <div class="icons">
                 <a href="https://x.com/pizza_rhinos" target="_blank"><img src="{{url('/images/twitter.svg')}}" alt="X Logo"></a>
-                <a href="https://discord.gg/pizza_rhinos" target="_blank"><img src="{{url('/images/discord.svg')}}" alt="Discord Logo"></a>
+                <a href="https://discord.gg/pizzarhinos" target="_blank"><img src="{{url('/images/discord.svg')}}" alt="Discord Logo"></a>
             </div>
-            <div class="copyright">(с) Pizza Rhinos 2024</div>
+            <div class="copyright">© Pizza Rhinos {{ now()->year }}</div>
         </footer>
 
         <canvas id="canvas"></canvas>

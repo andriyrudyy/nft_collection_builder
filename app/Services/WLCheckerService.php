@@ -4,7 +4,7 @@ namespace App\Services;
 
 use Illuminate\Support\Facades\Storage;
 
-class WalletService
+class WLCheckerService
 {
     public function searchWallet($wallet) {
         if ($this->searchInFile('wallets/gtd.txt', $wallet)) {

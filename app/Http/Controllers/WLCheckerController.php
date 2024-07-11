@@ -2,27 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\WalletService;
+use App\Services\WLCheckerService;
 use Illuminate\Http\Request;
 
-class HomeController
+class WLCheckerController
 {
     public function __construct(
-        protected WalletService $walletService,
+        protected WLCheckerService $wlCheckerService,
     ) {}
 
     public function index() {
-        return view('home');
+        return view('wl-checker');
     }
 
     public function search(Request $request) {
-        $result = $this->walletService->searchWallet($request->wallet);
+        $result = $this->wlCheckerService->searchWallet($request->wallet);
 
-        return view('home', [
+        return view('wl-checker', [
             'wallet' => $request->wallet,
             'result' => $result
         ]);
     }
-
-
 }

@@ -7,7 +7,7 @@
         <img src="{{url('/images/logo2.png')}}" alt="Logo" width="360">
     </div>
 
-    <form class="wallet-check" action="/" method="POST">
+    <form class="wallet-check" action="/wl-checker" method="POST">
         @csrf
         <div class="wallet-check__input-group">
             <input
