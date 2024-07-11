@@ -3,37 +3,57 @@
     var ctx = canvas.getContext('2d');
 
     var selects = document.getElementsByTagName('select');
-    for (var i = selects.length - 1; i >= 0; --i) {
+    for (var i =  0; i < selects.length; ++i) {
         selects[i].addEventListener('change', buildImage);
     }
 
     buildImage();
 
-    function drawImageScaled(select) {
-        var img = new Image();
-        img.onload = function(){
-            var hRatio = canvas.width  / img.width;
-            var vRatio =  canvas.height / img.height;
-            var ratio  = Math.min ( hRatio, vRatio );
-            var centerShift_x = ( canvas.width - img.width*ratio ) / 2;
-            var centerShift_y = ( canvas.height - img.height*ratio ) / 2;
-            ctx.drawImage(
-                img, 0,0, img.width, img.height,
-                centerShift_x, centerShift_y, img.width*ratio, img.height*ratio
-            );
-        };
-
-        var folder = select.getAttribute('name');
-        var file = select.value;
-        img.src = '/traits/' + folder + '/' + file + '.webp';
+    function drawImageScaled(image) {
+        var hRatio = canvas.width  / image.width;
+        var vRatio =  canvas.height / image.height;
+        var ratio  = Math.min ( hRatio, vRatio );
+        var centerShift_x = ( canvas.width - image.width*ratio ) / 2;
+        var centerShift_y = ( canvas.height - image.height*ratio ) / 2;
+        ctx.drawImage(
+            image, 0,0, image.width, image.height,
+            centerShift_x, centerShift_y, image.width*ratio, image.height*ratio
+        );
     }
 
     function buildImage() {
         ctx.clearRect(0,0,canvas.width, canvas.height);
+        var imagePromises = [];
 
         var selects = document.getElementsByTagName('select');
-        for (var i = selects.length - 1; i >= 0; --i) {
-            drawImageScaled(selects[i]);
+        for (var i =  0; i < selects.length; ++i) {
+            imagePromises.unshift(downloadImage(selects[i]));
         }
+
+        Promise.all(imagePromises).then(function (images) {
+            images.forEach(function (image) {
+                drawImageScaled(image);
+            });
+        }, function (err) {
+            alert('Error loading image frames');
+        });
+    }
+
+    function downloadImage(select) {
+        return new Promise((resolve, reject) => {
+            var image = new Image();
+
+            image.onload = function(){
+                resolve(image);
+            };
+
+            image.onerror = function (err) {
+                reject(err);
+            }
+
+            var folder = select.getAttribute('name');
+            var file = select.value;
+            image.src = '/traits/' + folder + '/' + file + '.webp';
+        });
     }
 })();
