@@ -16,7 +16,21 @@ class PFPBuilderService
         $items = Storage::disk('public_files')->files('traits/' . $folder);
 
         $items = array_map(function ($item) {
-            return pathinfo($item, PATHINFO_FILENAME);
+            $option = new \stdClass();
+
+            $option->value = pathinfo($item, PATHINFO_FILENAME);
+
+            $parts = explode('_', $option->value);
+            $parts = array_map(function ($part) {
+                if (in_array($part, ['btc', 'omb'])) {
+                    return strtoupper($part);
+                }
+                return ucfirst($part);
+            },$parts);
+
+            $option->name = implode(' ', $parts);
+
+            return $option;
         }, $items);
 
         $result = new \stdClass();

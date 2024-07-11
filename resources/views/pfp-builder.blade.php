@@ -11,12 +11,12 @@
                     <label>{{ucfirst($dropdown->name)}}</label>
                     <select name="{{$dropdown->name}}">
                         @foreach ($dropdown->items as $key => $item)
-                            <option {{ $key === $dropdown->selected ? 'selected' : '' }} value="{{$item}}">{{$item}}</option>
+                            <option {{ $key === $dropdown->selected ? 'selected' : '' }} value="{{$item->value}}">{{$item->name}}</option>
                         @endforeach
                     </select>
                 </div>
             @endforeach
-            <button type="button" class="pfp-download">Export as PNG</button>
+            <button type="button" class="pfp-download">Download</button>
         </div>
     </div>
 @endsection
