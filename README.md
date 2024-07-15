@@ -9,6 +9,6 @@ The website is developed using Laravel. In the configuration file .env, you need
 **APP_NAME**="NFT Collection Builder" - collection name<br>
 **WL_CHECKER_ENABLED**=false - display wallet verification and menu or not<br>
 **TRAIT_FOLDERS**="Eyes,Mouth,Body,Legs,Hands,Head,Ears,Background" - sequence of traits as they should be overlaid on each other<br>
-**TWITTER_URL**="https://x.com/" - link to the project's Twitter<><br>
+**TWITTER_URL**="https://x.com/" - link to the project's Twitter<br>
 **DISCORD_URL**="https://discord.com/" - link to the project's Discord<br>
 </p>
