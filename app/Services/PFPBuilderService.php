@@ -22,7 +22,7 @@ class PFPBuilderService
 
             $option->value = pathinfo($item, PATHINFO_BASENAME);
 
-            $parts = explode('_', $option->value);
+            $parts = explode('_', pathinfo($option->value, PATHINFO_FILENAME));
             $parts = array_map(function ($part) {
                 if (in_array($part, ['btc', 'omb'])) {
                     return strtoupper($part);
