@@ -3,6 +3,9 @@
 @section('title', 'NFT collection profile picture builder')
 
 @section('content')
+    <div class="pfp-builder-name">
+        <h2>{{ config('app.name') }}</h2>
+    </div>
     <div class="pfp-builder">
         <canvas id="pfp-builder" width="500" height="500"></canvas>
         <div class="builder-options">
