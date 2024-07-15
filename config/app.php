@@ -125,4 +125,10 @@ return [
 
     'wl_checker_enabled' => env('WL_CHECKER_ENABLED', true),
 
+    'trait_folders' => env('TRAIT_FOLDERS', 'Body,Legs,Hands,Head,Ears,Eyes,Mouth'),
+
+    'twitter_url' => env('TWITTER_URL', 'https://x.com/'),
+
+    'discord_url' => env('DISCORD_URL', 'https://discord.com/'),
+
 ];

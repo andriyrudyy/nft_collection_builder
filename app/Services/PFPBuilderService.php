@@ -7,9 +7,11 @@ use Illuminate\Support\Facades\Storage;
 class PFPBuilderService
 {
     public function getDropdowns() {
+        $folders = explode(',', config('app.trait_folders'));
+
         return array_map(function ($folder) {
             return $this->getTraitItems($folder);
-        }, ['hats', 'horns', 'mouth', 'eyes', 'clothes', 'body', 'background']);
+        }, $folders);
     }
 
     private function getTraitItems($folder) {
@@ -18,7 +20,7 @@ class PFPBuilderService
         $items = array_map(function ($item) {
             $option = new \stdClass();
 
-            $option->value = pathinfo($item, PATHINFO_FILENAME);
+            $option->value = pathinfo($item, PATHINFO_BASENAME);
 
             $parts = explode('_', $option->value);
             $parts = array_map(function ($part) {

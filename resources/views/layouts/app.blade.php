@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Pizza Rhinos @yield('title')</title>
+        <title>{{ config('app.name') }} @yield('title')</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -57,10 +57,10 @@
 
         <footer>
             <div class="icons">
-                <a href="https://x.com/pizza_rhinos" target="_blank"><img src="{{url('/images/twitter.svg')}}" alt="X Logo"></a>
-                <a href="https://discord.gg/pizzarhinos" target="_blank"><img src="{{url('/images/discord.svg')}}" alt="Discord Logo"></a>
+                <a href="{{ config('app.twitter_url')  }}" target="_blank"><img src="{{url('/images/twitter.svg')}}" alt="X Logo"></a>
+                <a href="{{ config('app.discord_url')  }}" target="_blank"><img src="{{url('/images/discord.svg')}}" alt="Discord Logo"></a>
             </div>
-            <div class="copyright">© Pizza Rhinos {{ now()->year }}</div>
+            <div class="copyright">© {{ config('app.name')  }} {{ now()->year }}</div>
         </footer>
 
         <canvas id="canvas"></canvas>

@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="logo">
-        <img src="{{url('/images/logo2.png')}}" alt="Logo" width="360">
+        <img src="{{url('/images/logo.png')}}" alt="Logo" width="360">
     </div>
 
     <form class="wallet-check" action="/wl-checker" method="POST">

@@ -11,7 +11,7 @@
         // Download canvas image as PNG file
         var image = canvas.toDataURL();
         var aDownloadLink = document.createElement('a');
-        aDownloadLink.download = 'pizza-rhino-custom-nft.png';
+        aDownloadLink.download = 'custom-nft.png';
         aDownloadLink.href = image;
         aDownloadLink.click();
     });
@@ -62,7 +62,7 @@
 
             var folder = select.getAttribute('name');
             var file = select.value;
-            image.src = '/traits/' + folder + '/' + file + '.webp';
+            image.src = '/traits/' + folder + '/' + file;
         });
     }
 })();

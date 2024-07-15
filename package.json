@@ -11,6 +11,5 @@
         "vite": "^5.0"
     },
     "dependencies": {
-        "starback": "^2.1.6"
     }
 }
