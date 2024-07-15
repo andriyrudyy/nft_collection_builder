@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/c447fc5f-e8d1-436e-9533-a8c30d3f0736)
+
 <p>
 We have developed a website template for NFT collections, which includes a profile builder and wallet checker. You can take this template and customize it to fit your needs, or you can contact me via private message to add additional functionality.<br><br>
 
@@ -12,3 +14,4 @@ The website is developed using Laravel. In the configuration file .env, you need
 **TWITTER_URL**="https://x.com/" - link to the project's Twitter<br>
 **DISCORD_URL**="https://discord.com/" - link to the project's Discord<br>
 </p>
+
