@@ -2,6 +2,8 @@
 
 <img width="925" alt="Screenshot 2024-07-15 at 16 34 26" src="https://github.com/user-attachments/assets/f029c425-f7de-4aea-a850-aa9ff4646951">
 
+<img width="1624" alt="Screenshot 2024-07-17 at 14 31 16" src="https://github.com/user-attachments/assets/3cec59f9-6907-45a7-9d6f-0a8c0818964c">
+
 <p>
 We have developed a website template for NFT collections, which includes a profile builder and wallet checker. You can take this template and customize it to fit your needs, or you can contact me via private message to add additional functionality.<br><br>
 
