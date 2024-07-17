@@ -3,7 +3,7 @@
 @section('title', 'NFT collection profile picture builder')
 
 @section('content')
-    <div class="pfp-builder-name">
+    <div class="page-header">
         <h2>{{ config('app.name') }}</h2>
     </div>
     <div class="pfp-builder">

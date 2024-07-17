@@ -131,4 +131,5 @@ return [
 
     'discord_url' => env('DISCORD_URL', 'https://discord.com/'),
 
+    'gallery_limit' => env('GALLERY_LIMIT', 100),
 ];

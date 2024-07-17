@@ -8,6 +8,7 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/css/home.css',
                 'resources/css/pfp-builder.css',
+                'resources/css/nft-gallery.css',
                 'resources/js/app.js',
                 'resources/js/pfp-builder.js',
             ],

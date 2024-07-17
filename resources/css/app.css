@@ -51,6 +51,21 @@ input::placeholder {
     opacity: 1;
 }
 
+.page-header {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0 0 0;
+}
+
+.page-header h2 {
+    display: inline-block;
+    background-color: #f2fff6;
+    border-radius: 6px;
+    color: #020003;
+    padding: 0 1rem;
+    margin: 0;
+}
+
 #canvas {
     position: fixed;
     inset: 0;

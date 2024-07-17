@@ -1,0 +1,7 @@
+.nft-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 4rem 1rem 0 1rem;
+}

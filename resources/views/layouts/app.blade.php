@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name') }} @yield('title')</title>
 
@@ -15,7 +16,6 @@
     </head>
     <body>
         <header>
-            @if(config('app.wl_checker_enabled'))
             <nav role="navigation">
                 <div id="menuToggle">
                     <!--
@@ -42,13 +42,17 @@
                         <li class="{{ request()->is('/') ? 'active' : '' }}">
                             <a href="/">PFP Builder</a>
                         </li>
+                        <li class="{{ request()->is('nft-gallery') ? 'active' : '' }}">
+                            <a href="/nft-gallery">NFT Gallery</a>
+                        </li>
+                        @if(config('app.wl_checker_enabled'))
                         <li class="{{ request()->is('wl-checker') ? 'active' : '' }}">
                             <a href="/wl-checker">WL checker</a>
                         </li>
+                        @endif
                     </ul>
                 </div>
             </nav>
-            @endif
         </header>
 
         <main>
