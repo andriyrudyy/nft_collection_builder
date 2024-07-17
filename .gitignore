@@ -1,7 +1,7 @@
 /.phpunit.cache
 /node_modules
 /public/build
-/public/traits
+#/public/traits
 /public/gallery
 /public/hot
 /public/storage
