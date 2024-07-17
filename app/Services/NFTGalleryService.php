@@ -9,6 +9,10 @@ class NFTGalleryService
     public function getImages() {
         $images = Storage::disk('public_files')->files('gallery');
         $images = array_filter($images, function ($image) { return pathinfo($image, PATHINFO_EXTENSION) === 'webp'; });
+        // Sort images from newest to oldest
+        usort($images, function($a, $b) {
+            return filemtime($b) - filemtime($a);
+        });
         return array_map(function ($image) { return pathinfo($image, PATHINFO_BASENAME); }, $images);
     }
 
