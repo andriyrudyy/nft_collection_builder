@@ -49,8 +49,9 @@ class NFTGalleryService
     }
 
     private function deleteFilesIfLimitExceeded() {
-        // Get array of files in gallery folder
+        // Get array of .webp files in gallery folder
         $files = Storage::disk('public_files')->files('gallery');
+        $files = array_filter($files, function ($image) { return pathinfo($image, PATHINFO_EXTENSION) === 'webp'; });
         // Calculate the diff between files in gallery and max configured limit
         $filesLimitDiff = count($files) - config('app.gallery_limit');
 
