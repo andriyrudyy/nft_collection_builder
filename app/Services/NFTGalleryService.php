@@ -8,6 +8,7 @@ class NFTGalleryService
 {
     public function getImages() {
         $images = Storage::disk('public_files')->files('gallery');
+        $images = array_filter($images, function ($image) { return pathinfo($image, PATHINFO_EXTENSION) === 'webp'; });
         return array_map(function ($image) { return pathinfo($image, PATHINFO_BASENAME); }, $images);
     }
 
